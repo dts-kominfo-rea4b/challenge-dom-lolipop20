@@ -47,7 +47,7 @@
       document.getElementById("todo-submit").addEventListener("click",fnClickHandler);
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-      document.addEventListener('keyup',keypress);
+      document.addEventListener('keyup',keypress).appendChild(li);
       function keypress(e){
         e.preventDefault()
         if(e.key === 'Enter' || e.keyCode === 13){
