@@ -25,9 +25,9 @@
     <!-- ! Untuk tantangan ini, script jangan diubah ke external js yah ! -->
     <script>
       // TODO: Deklarasi variable sesuai dengan kebutuhan di sini
-     let element = null;
-     let t = null;
-     let li = null;
+      let button;
+      let input;
+      let output;
 
       // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
       // Fungsi yang digunakan untuk menambahkan tulisan
@@ -40,26 +40,16 @@
         document.getElementById("todo-output").appendChild(li)
         document.getElementById("todo-input").value=""
       }
-      // document.getElementById("todo-input").value;
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
       document.getElementById("todo-submit").addEventListener("click",fnClickHandler);
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-      console.log(document.getElementById("todo-input"))
       document.getElementById("todo-input").addEventListener("keypress", function(e) {
         if(e.key === 'Enter' || e.keyCode === 13){
           fnClickHandler()
         }
       });
-      // document.getElementById("todo-input").addEventListener('keyup',keypress);
-      // function keypress(e){
-      //   console.log(e)
-      //   e.preventDefault()
-        // if(e.key === 'Enter' || e.keyCode === 13){
-        //   fnClickHandler()
-        // }
-      // }
     </script>
     <style>
       body{
