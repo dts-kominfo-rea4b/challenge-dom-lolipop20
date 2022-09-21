@@ -9,33 +9,66 @@
   <body>
     <div id="app">
       <!-- TODO: Buatlah sebuah header dengan id todo-title -->
+      <h1 id="todo-title">Todo-List</h1>
       <!-- TODO: Buatlah sebuah subtitle dengan id todo-subtitle -->
-
+      <h3 id="todo-subtitle">Today i Need You</h3>
       <!-- Section: input -->
       <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
+      <input type="text" placeholder="title" id="todo-input">
       <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
-
+      <input type="button" value="submit" id="todo-submit">
       <!-- Section output -->
       <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
+      <ul id="todo-output"></ul>
     </div>
 
     <!-- ! Untuk tantangan ini, script jangan diubah ke external js yah ! -->
     <script>
       // TODO: Deklarasi variable sesuai dengan kebutuhan di sini
-      let button;
-      let input;
-      let output;
+     let element = null;
+     let t = null;
+     let li = null;
 
       // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
       // Fungsi yang digunakan untuk menambahkan tulisan
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
-      function fnClickHandler(toDoItem) {}
+      function fnClickHandler(toDoItem) {
+        element = document.getElementById("todo-input").value;
+        t = document.createTextNode(element)
+        li = document.createElement("li");
+        li.appendChild(t)
+        document.getElementById("todo-output").appendChild(li)
+        document.getElementById("todo-input").value=""
 
+      }
+      // document.getElementById("todo-input").value;
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
-      
+      document.getElementById("todo-submit").addEventListener("click",fnClickHandler);
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
+      document.addEventListener('keyup',keypress);
+      function keypress(e){
+        e.preventDefault()
+        if(e.key === 'Enter' || e.keyCode === 13){
+          fnClickHandler();
+        }
+      }
     </script>
+    <style>
+      body{
+        text-align: center;
+        background-color: rgb(139, 111, 167);
+      }
+      #app{
+        border-style:inset ;
+        background-color: rgb(231, 231, 231);
+        border-radius:10px;
+      }
+      h1{
+        background-color: aqua;
+        background-attachment: fixed;
+      }
+    </style>
   </body>
 </html>
