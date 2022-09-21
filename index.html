@@ -39,7 +39,6 @@
         li.appendChild(t)
         document.getElementById("todo-output").appendChild(li)
         document.getElementById("todo-input").value=""
-
       }
       // document.getElementById("todo-input").value;
       // TODO: register event onclick / addEventListener untuk button
@@ -47,13 +46,20 @@
       document.getElementById("todo-submit").addEventListener("click",fnClickHandler);
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-      document.getElementById("todo-input").addEventListener('keyup',keypress,fnClickHandler);
-      function keypress(e){
-        e.preventDefault()
+      console.log(document.getElementById("todo-input"))
+      document.getElementById("todo-input").addEventListener("keypress", function(e) {
         if(e.key === 'Enter' || e.keyCode === 13){
           fnClickHandler()
         }
-      }
+      });
+      // document.getElementById("todo-input").addEventListener('keyup',keypress);
+      // function keypress(e){
+      //   console.log(e)
+      //   e.preventDefault()
+        // if(e.key === 'Enter' || e.keyCode === 13){
+        //   fnClickHandler()
+        // }
+      // }
     </script>
     <style>
       body{
